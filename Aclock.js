@@ -80,14 +80,16 @@ for (let i = 0; i <= 29; i++) {
 //Time display
 let hands = document.querySelectorAll('.hand');
 let digidisplay=document.getElementById('digi');
-
+let but = document.getElementById('clkcng');
 function timing() {
     let tm = new Date();
 
+    let calmili=tm.getMilliseconds();
     let calsec = tm.getSeconds();
     let calmin = tm.getMinutes();
     let calhrs = tm.getHours();
 
+    but.innerText=calmili;
     hands[0].style.transform = `rotate(${calsec * 6}deg)`;
     hands[1].style.transform = `rotate(${calmin * 6}deg)`;
     hands[2].style.transform = `rotate(${calhrs * 30 + calmin * 0.5}deg)`;
@@ -112,7 +114,7 @@ function timing() {
         document.body.style.backgroundSize = "cover";
     }
 }
-setInterval(timing, 1000);
+setInterval(timing, 1);
 
 //face change
 let face = document.getElementById('circle1')
@@ -126,7 +128,8 @@ function afclk() {
     face.style.backgroundSize = "cover";
     cntIndex = (cntIndex + 1) % images.length;
 }
-let but = document.getElementById('clkcng');
+
+
 but.addEventListener('click', afclk);
 
 
@@ -135,3 +138,4 @@ function onloading() {
     load.classList.add("outinanimation");
 }
 window.onload = onloading;
+
