@@ -1,0 +1,141 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(18, 15, 15);
+    perspective: 500px;
+    
+}
+
+.container {
+    height: 70vh;
+    width: 70vh;
+    border: solid crimson 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateZ(500px);
+
+}
+
+.tick {
+    height: 1vh;
+    width: 0.3vw;
+    background-color:#20ff00;
+    position: absolute;
+}
+
+.thetick {
+    position: relative;
+    left: -0.5vw;
+    top: 0vh;
+    color: firebrick;
+}
+
+.tickleft {
+    position: relative;
+    left: -0.5vw;
+    top: 0vh;
+    color: firebrick;
+}
+
+#tickleft55 {
+    position: relative;
+    left: -1vw;
+    top: 0vh;
+}
+
+#tickleft50 {
+    position: relative;
+    left: -1vw;
+    top: 0vh;
+}
+
+#tickleft45 {
+    position: relative;
+    left: -0.7vw;
+    top: -1vh;
+    ;
+}
+
+#tickleft30 {
+    position: relative;
+    left: -0.7vw;
+    top: -2vh;
+}
+
+.click {
+    background-color: black;
+    height: 4vh;
+    width: 4vh;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 4;
+    border: solid 2px white;
+}
+
+.click:hover {
+    height: 3.5vh;
+    width: 3.5vh;
+    border: solid 2px rgb(213, 22, 22);
+    background-color: greenyellow;
+}
+
+.hand {
+    background-color: brown;
+    position: absolute;
+    transform-origin: bottom center;
+    bottom: 50%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+}
+
+#second {
+    width: 0.5vw;
+    height: 220px;
+    z-index: 1;
+    opacity: 1;
+    background-color: rgb(130, 24, 24);
+    transform: rotate(0deg);
+}
+
+#minutes {
+    width: 0.8vw;
+    opacity: 1;
+    height: 28vh;
+    z-index: 2;
+    transform: rotate(0deg);
+    background-color:rgb(0, 255, 170);
+}
+
+#hour {
+    background-color: rgb(62, 0, 246);
+    width: 1.5vw;
+    opacity: 1;
+    height: 22vh;
+    z-index: 3;
+    transform: rotate(0deg);
+}
+
+@keyframes outin {
+    from {
+        transform: translateZ(500px);
+    }
+
+    to {
+        transform: translateZ(0px);
+    }
+}
+
+.outinanimation {
+    animation: outin 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
